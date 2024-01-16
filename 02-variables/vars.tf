@@ -10,7 +10,8 @@ variable "v2" {
 variable "v3" {
   default = {
     abc = 100
-    xyz = "200"
+    xyz = "Alphabets"
+    abc1=500
   }
 }
 
