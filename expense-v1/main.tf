@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
-resource "aws_instance" "backend" {
+/* resource "aws_instance" "backend" {
   ami                     = "ami-0f3c7d07486cad139"
   instance_type           = "t3.micro"
   vpc_security_group_ids  = ["sg-05760a73b326267cb"]
@@ -26,4 +26,4 @@ resource "aws_instance" "mysql" {
   tags = {
     Name = "mysql-dev"
   }
-}
+}*/
