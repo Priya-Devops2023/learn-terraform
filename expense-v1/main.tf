@@ -7,6 +7,7 @@ resource "aws_instance" "frontend" {
     Name = "frontend-dev"
   }
 }
+
 resource "aws_instance" "backend" {
   ami                     = "ami-0f3c7d07486cad139"
   instance_type           = "t3.micro"
@@ -16,6 +17,7 @@ resource "aws_instance" "backend" {
     Name = "backend-dev"
   }
 }
+
 resource "aws_instance" "mysql" {
   ami                     = "ami-0f3c7d07486cad139"
   instance_type           = "t3.micro"
