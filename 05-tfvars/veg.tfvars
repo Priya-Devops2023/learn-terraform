@@ -1,1 +1,1 @@
-x = [ "carrot", "tamato"]
+x = [ "carrot", "tomato"]
