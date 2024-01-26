@@ -1,3 +1,3 @@
 bucket = "s3-practice-devops"
-key    = "test/dev/terraform.tfstate"
+key    = "test/terraform.tfstate"
 region = "us-east-1"
