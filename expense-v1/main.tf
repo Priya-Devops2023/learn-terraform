@@ -1,8 +1,8 @@
 # Creating an instance
 resource "aws_instance" "frontend" {
-  ami                     = "ami-0f3c7d07486cad139"
-  instance_type           = "t3.micro"
-  vpc_security_group_ids  = ["sg-05760a73b326267cb"]
+  ami                     = var.ami
+  instance_type           = var.instance_type
+  vpc_security_group_ids  = var.vpc_security_group_ids
 
   tags = {
     Name = "frontend-dev"
@@ -13,14 +13,14 @@ resource "aws_instance" "frontend" {
 resource "aws_route53_record" "frontend" {
   name    = "frontend-dev"
   type    = "A"
-  zone_id = "Z082480628W9T5FTT67ES"
+  zone_id = var.zone_id
   ttl = 30
 }
 # Creating an instance
  resource "aws_instance" "backend" {
-  ami                     = "ami-0f3c7d07486cad139"
-  instance_type           = "t3.micro"
-  vpc_security_group_ids  = ["sg-05760a73b326267cb"]
+  ami                     = var.ami
+  instance_type           = var.instance_type
+  vpc_security_group_ids  = var.vpc_security_group_ids
 
   tags = {
     Name = "backend-dev"
@@ -31,15 +31,15 @@ resource "aws_route53_record" "frontend" {
 resource "aws_route53_record" "backend" {
   name    = "backend-dev"
   type    = "A"
-  zone_id = "Z082480628W9T5FTT67ES"
+  zone_id = var.zone_id
   ttl = 30
 }
 # Creating an instance
 
 resource "aws_instance" "mysql" {
-  ami                     = "ami-0f3c7d07486cad139"
-  instance_type           = "t3.micro"
-  vpc_security_group_ids  = ["sg-05760a73b326267cb"]
+  ami                     = var.ami
+  instance_type           = var.instance_type
+  vpc_security_group_ids  = var.vpc_security_group_ids
 
   tags = {
     Name = "mysql-dev"
@@ -49,6 +49,6 @@ resource "aws_instance" "mysql" {
 resource "aws_route53_record" "mysql" {
   name    = "mysql-dev"
   type    = "A"
-  zone_id = "Z082480628W9T5FTT67ES"
+  zone_id = var.zone_id
   ttl = 30
 }
