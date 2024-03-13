@@ -15,6 +15,7 @@ resource "aws_route53_record" "frontend" {
   type    = "A"
   zone_id = var.zone_id
   ttl = 30
+  records = [aws_instance.frontend.private_ip]
 }
 # Creating an instance
  resource "aws_instance" "backend" {
@@ -33,6 +34,7 @@ resource "aws_route53_record" "backend" {
   type    = "A"
   zone_id = var.zone_id
   ttl = 30
+  records = [aws_instance.backend.private_ip]
 }
 # Creating an instance
 
@@ -51,4 +53,5 @@ resource "aws_route53_record" "mysql" {
   type    = "A"
   zone_id = var.zone_id
   ttl = 30
+  records = [aws_instance.mysql.private_ip]
 }
