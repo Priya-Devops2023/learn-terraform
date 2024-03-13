@@ -7,7 +7,7 @@ variable "instance_type" {
 }
 
 variable "vpc_security_group_ids" {
-  default = "[sg-05760a73b326267cb]"
+  default = ["sg-05760a73b326267cb"]
 }
 
 variable "zone_id" {
